@@ -1,0 +1,18 @@
+<%- include("partials/header") -%>
+<%var first100Chars=[]; %>
+<h1>Home</h1>
+<p> <%=homeStartingContent%> </p>
+
+<% articles.forEach(function(article) { %>
+
+    <h1> <%=article.title%></h1>
+    <p> <%=article.body.substring(0,100) %>
+    <a href="/articles/<%=article._id%>">Read more</a>
+    <span id="dots">...</span><span id="more">
+      <%=article.body.substring(101,article.body.length) %>
+    </span>
+    </p>
+
+  <%});%>
+
+<%- include("partials/footer") -%>
