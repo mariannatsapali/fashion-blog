@@ -36,15 +36,21 @@ app.use(express.static("public"));
 
 
 app.get("/", function(req, res) {
-  Article.find({}, function(err, articlesFound) {
-    if (!err) {
-      res.render("home", {
-        homeStartingContent: homeStartingContent,
-        articles: articlesFound
-      });
-    } else
-      console.log(err);
-  });
+  try{
+    Article.find({}, function(err, articlesFound) {
+      if (!err) {
+        res.render("home", {
+          homeStartingContent: homeStartingContent,
+          articles: articlesFound
+        });
+      } else
+        console.log(err);
+    });
+  }
+  catch{
+    console.log("Error in GET to home route request.");
+  }
+
 });
 
 app.get("/contact", function(req, res) {
