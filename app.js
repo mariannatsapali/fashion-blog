@@ -36,7 +36,7 @@ app.use(express.static("public"));
 
 
 app.get("/", function(req, res) {
-  try{
+  try {
     Article.find({}, function(err, articlesFound) {
       if (!err) {
         res.render("home", {
@@ -46,8 +46,7 @@ app.get("/", function(req, res) {
       } else
         console.log(err);
     });
-  }
-  catch{
+  } catch {
     console.log("Error in GET to home route request.");
   }
 
@@ -73,15 +72,16 @@ app.get("/compose", function(req, res) {
 app.get("/articles/:articleId", (req, res) => {
 
 
-  Article.findOne({_id : req.params.articleId}, function(err, articleFound) {
+  Article.findOne({
+    _id: req.params.articleId
+  }, function(err, articleFound) {
     if (!err) {
-          res.render("post", {
-            articleTitle: articleFound.title,
-            articleBody: articleFound.body
-          });
+      res.render("post", {
+        articleTitle: articleFound.title,
+        articleBody: articleFound.body
+      });
 
-        }
-     else
+    } else
       console.log(err);
   });
 
@@ -97,15 +97,15 @@ app.post("/compose", function(req, res) {
   });
 
   //Save new article into database
-  newArticle.save(function(err){
-    if(!err)
-    console.log("Article is posted succesfully!");
-      res.redirect("/");
+  newArticle.save(function(err) {
+    if (!err)
+      console.log("Article is posted succesfully!");
+    res.redirect("/");
   });
 
 });
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000");
 });
