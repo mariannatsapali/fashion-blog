@@ -1,11 +1,50 @@
 
-</div>
-<div class="footer-padding">
-  <div class="footer">
-    <p>Made with ❤️ by Maria Anna Tsapali</p>
-  </div>
-</div>
-
 </body>
+<div class="footer">
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> ECLAT </h5>
+          <p class="card-text"><div class="social-icons">
+            <!-- Replace the "#" in the href with your actual social media profile links -->
+            <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body" style="text-align: left;">
+          <h5 class="card-title">Email Subscription</h5>
+          <p class="card-text">Subscribe to our newsletter for updates.<form action="#" method="post">
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div></p>
+            <button type="submit">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  &copy; <span id="copyright-year"></span> ECLAT
+</div>
+<script>
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  var quill = new Quill('#quill-editor', {
+    theme: 'snow',
+  });
+
+  quill.on('text-change', function () {
+    var htmlContent = quill.root.innerHTML;
+    document.getElementById('newContentBody').value = htmlContent;
+  });
+</script>
+
 
 </html>

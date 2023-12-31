@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+<div class="page">
+  <% for (let i = 0; i < articles.length; i += 3) { %>
+    
+      <div class="article-container">
+        <% for (let j = i; j < i + 3 && j < articles.length; j++) { %>
+          <div class="article">
+            <div class="image-gallery">
+              <img src="<%= articles[j].imageUrl %>" alt="Image" />
+            </div>
+            <h5><%= articles[j].category %></h5>
+            <h3><%= articles[j].title %></h3>
+            <p>
+              <% if (articles[j].body) { %>
+                <%- articles[j].body.substring(0, 100) %>
+                <a href="/articles/<%= articles[j]._id %>">Read more</a>
+                <span id="dots">...</span>
+                <span id="more"><%- articles[j].body.substring(101) %></span>
+              <% } else { %>
+                No content available.
+              <% } %>
+            </p>
+            <hr class="dashed" />
+            <h5><%= articles[j].author %></h5>
+            <h6><%= articles[j].date.toLocaleDateString("en-us", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }) %></h6>
+          </div>
+        <% } %>
+      </div>
+   
+  <% } %>
+</div>
+
+<%- include("partials/footer") -%>

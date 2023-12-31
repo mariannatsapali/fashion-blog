@@ -1,40 +1,471 @@
+/* ========= General Styles ========= */
+
+/* Body styles */
+body {
+  background-image: url("https://images.pexels.com/photos/6634140/pexels-photo-6634140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper styles */
+.wrapper {
+  flex: 1;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Paragraph styles */
+p {
+  margin: 0;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: #bca37f;
+}
+
+/* Logo styles */
+#logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+#logo:hover {
+  opacity: 0.8;
+}
+
+/* ========= Horizontal Rule Styles ========= */
+
+/* Horizontal rule styles */
+hr {
+  border: none;
+  border-top: 0px dotted #113946;
+  width: 5%;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+/* Dashed horizontal rule styles */
+hr.dashed {
+  display: block;
+  border: none;
+  border-top: 2px dashed #113946;
+  width: 30%;
+  margin: 5% 0;
+}
+
+/* ========= Button Styles ========= */
+
+/* Button styles */
+button {
+  margin: 30%;
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  /* Box shadow for button */
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #bca37f;
+  cursor: pointer;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+button:hover {
+  background: #f6f9fe;
+  color: black;
+}
+
+/* Contact button styles */
+#contact-button {
+  margin: 1%;
+  display: block;
+  align-self: center;
+}
+
+#contact-button:hover {
+  background: #f6f9fe;
+  color: black;
+}
+
+/* ========= Article Styles ========= */
+
+/* Article styles */
+.article {
+  background-color: #f8f0e5;
+  opacity: 97%;
+  color: black;
+  padding: 10px;
+  margin: 0.3%;
+  text-align: left;
+  display: block;
+  border: 1px solid #ccc;
+  /* Box shadow for article */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* Article heading styles */
+.article h5 {
+  color: #113946;
+  text-transform: uppercase;
+}
+
+/* Article subheading styles */
+.article h6 {
+  color: grey;
+}
+
+/* Article image styles */
+.article img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ========= Container Styles ========= */
+
+/* Container styles */
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
 }
+
+/* ========= Navbar Styles ========= */
+
+/* Navbar brand styles */
+.navbar-default .navbar-brand a {
+  color: #113946;
+  display: block;
+}
+
+/* Navbar item styles */
+.nav-item {
+  padding: 0 10px;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  margin-right: 0;
+  display: inline-block;
+  text-align: center;
+}
+
+
+/* Navbar brand hover styles */
+.navbar-default .navbar-brand a:hover {
+  color: #113946;
+  text-decoration: none;
+}
+
+/* Navbar styles */
 .navbar {
-    padding-top: 35px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+  border: 0;
+  border-radius: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+  background-color: #f8f0e5;
+  position: sticky;
+  display: flex;
 }
 
-
-.footer-padding {
-	padding-bottom: 60px;
+/* Navbar navigation styles */
+.navbar-nav {
+  align-items: self-end;
 }
 
-.footer {
-	position:absolute;
-  bottom:0;
-	text-align: center;
-
-	width: 100%;
-	height: 10%;
-	background-color: #1abc9c;
-
+/* Navbar link styles */
+.navbar-default .navbar-nav li a {
+  color: #eadbc8;
 }
 
-.footer p {
-	margin-top: 25px;
-	font-size: 12px;
+/* Navbar link hover styles */
+.navbar-nav li a:hover {
+  color: #113946 !important;
+  background-color: #f8f0e5;
+}
+
+/* Add your custom styles for the button */
+.custom-toggler {
+  background-color: #f8f0e5; /* Change to your desired background color */
+  border: none; /* Change to your desired border color */
+
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+
+.custom-toggler:hover {
+  background-color: #f8f0e5; /* Change to your desired background color */
+  border: none; /* Change to your desired border color */
+
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+
+.custom-toggler img {
+  width: 30px; /* Adjust the width of the image */
+  height: 30px; /* Adjust the height of the image */
+  /* You can add more styles for the image if necessary */
+}
+
+/* ========= First Banner Styles ========= */
+
+/* First banner styles */
+.first-banner {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(228, 221, 221, 0.4) 10%,
+      rgba(0, 0, 0, 0.9) 95%
+    ),
+    url("https://64.media.tumblr.com/a22f6d4376694e4b914c8924be5ab8a2/cddd89e2d5d341f1-6d/s1280x1920/a21abf65770997c6fbc01fbc518e0762cb3ef081.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
+  flex-direction: column;
+  padding: 10%;
+  text-align: justify;
 }
 
-#more {display: none;}
+/* Home content styles */
+.home-content {
+  align-items: center;
+  color: #fff2d8;
+}
+
+/* ========= Page Styles ========= */
+
+/* Page styles */
+.page {
+  margin: 3% 5% 3% 5%;
+  color: #fff2d8;
+  text-align: justify;
+}
+
+/* CSS for the post layout */
+.page img {
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+/* Post details styles */
+.post-details {
+  float: left;
+  width: 40%;
+  margin: 5%;
+}
+
+/* Post body styles */
+.post-body {
+  height: 100%;
+  padding: 5%;
+  margin-bottom: 5%;
+  background-color: rgb(248, 240, 229, 0.7);
+  color: black;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* ========= Footer Styles ========= */
+
+/* Footer styles */
+.footer {
+  background-color: black;
+  opacity: 90%;
+  color: #f8f0e5;
+  text-align: center;
+  padding: 30px;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  height:10%;
+}
+
+.card-body{
+ background-color: black;
+}
+.card{
+  border: none;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color:#eadbc8;
+  font-size: 35px; 
+  margin: 10px;
+}
+
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Container styles for footer */
+.container {
+  min-height: 100vh;
+}
+
+/* ========= Carousel Styles ========= */
+
+/* Carousel indicators styles */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+/* Carousel indicator item styles */
+.carousel-indicators li {
+  border: 1px solid #ddd;
+  opacity: 70%;
+  border-radius: 1px;
+  width: 10%;
+  height: 3%;
+  margin-bottom: 0.1%;
+  border-color: grey;
+  display: inline-block;
+}
+
+/* Carousel active indicator item styles */
+.carousel-indicators .active {
+  border-radius: 1px;
+  width: 10%;
+  height: 5%;
+  border-color: #113946;
+}
+
+/* Hide carousel control icons */
+.carousel-control-prev-icon {
+  display: none;
+}
+.carousel-control-next-icon {
+  display: none;
+}
+
+/* ========= Article Container Styles ========= */
+
+/* Article container styles */
+.article-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1%;
+  padding: 10px;
+}
+
+/* ========= Carousel Home Styles ========= */
+
+/* Carousel home styles */
+#carousel-home {
+  margin: 5% 8%;
+  text-align: left;
+}
+
+/* ========= Hidden Content Styles ========= */
+
+/* Hidden content styles */
+#more {
+  display: none;
+  z-index: 100;
+}
+
+/* ========= Form Input ========= */
+
+/* Form input container styles */
+.input-container {
+  position: relative;
+}
+
+/* Check icon styles */
+.check-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  /* Adjust the right spacing based on the icon size and desired position */
+  transform: translateY(-50%);
+  color: #113946;
+  font-size: 20px;
+}
+
+/* Quill editor styles */
+#quill-editor {
+  background-color: white;
+  color: black;
+  height: 200px;
+}
+
+/* Button styles within the form */
+#edit-button {
+  background-color: white;
+  margin-left: 45%;
+}
+
+.ql-toolbar{
+  display: block;
+  background-color: white;
+}
+
+.ql-snow.ql-toolbar button{
+  margin: 3px;
+}
+
+.ql-snow .ql-formats {
+display: inline-flex;
+flex-wrap: nowrap;
+}
+
+

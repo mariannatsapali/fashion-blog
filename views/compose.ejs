@@ -1,17 +1,106 @@
 <%- include("partials/header") -%>
-<h1>Compose</h1>
-<form action="/compose" method="post">
-  <div class="form-group">
-    <div class="mb-3">
-      <label class="form-label">Title</label>
-      <input type="text" name="newContentTitle" class="form-control">
+<div class="page">
+  <h1>Compose</h1>
+  <form action="/compose" name="newForm" method="post">
+    <!--============================Title============================-->
+    <div class="form-group">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="newContentTitle"
+            class="form-control"
+            required
+          />
+          <div id="titleCheckIcon" class="check-icon"></div>
+        </div>
+        <div id="titleErrorMessage" class="minCharsError"></div>
+      </div>
+      <!--============================Author============================-->
+      
+        <div class="mb-3">
+          <label class="form-label">Author</label>
+          <div class="input-container">
+            <input
+              type="text"
+              name="newContentAuthor"
+              class="form-control"
+              required
+            />
+            <div id="authorCheckIcon" class="check-icon"></div>
+          </div>
+        </div>
+        <div id="authorErrorMessage" class="minCharsError"></div>
+      
+      <!--============================Category============================-->
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="newContentCategory"
+            class="form-control"
+            required
+          />
+          <div id="categoryCheckIcon" class="check-icon"></div>
+        </div>
+        <div id="categoryErrorMessage" class="minCharsError"></div>
+      </div>
+      <!--============================Date============================-->
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input
+          type="date"
+          name="newContentDate"
+          class="form-control"
+          required
+        />
+      </div>
+      <!--============================Post============================-->
+      <div class="mb-3">
+        <label class="form-label">Post</label>
+        <div id="quill-editor"></div>
+        <input
+          type="hidden"
+          name="newContentBody"
+          id="newContentBody"
+          required
+        />
+      </div>
+      <!--============================Image URL============================-->
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <div class="input-container">
+        <input
+          type="text"
+          name="newContentImageUrl"
+          class="form-control"
+          placeholder="Enter image URL"
+          required
+        />
+        <div id="imageUrlCheckIcon" class="check-icon"></div></div>
+      </div>
+        <div id="imageUrlErrorMessage"></div>
+      </div>
+      <!--============================Accept Terms============================-->
+      <div class="mb-3">
+        <label class="form-check">
+          <input
+          style="width: 1%;"
+            type="checkbox"
+            name="acceptTerms"
+            class="form-check-input"
+            required
+          />
+          I accept the terms and conditions
+        </label>
+      </div>
+      <button type="submit" name="newContentButton">Publish</button>
+      <div id="formErrorMessage" style="margin-top: 10px;"></div>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Post</label>
-      <textarea class="form-control" rows="3" name="newContentBody"></textarea>
-    </div>
-  </div>
+  </form>
+</div>
+<script src="/scripts/checks.js"></script>
 
-  <button class="btn btn-primary" type="submit" name="newContentButton">Publish</button>
-</form>
 <%- include("partials/footer") -%>

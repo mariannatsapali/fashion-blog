@@ -1,18 +1,59 @@
 <%- include("partials/header") -%>
-<%var first100Chars=[]; %>
-<h1>Home</h1>
-<p> <%=homeStartingContent%> </p>
+<div class="first-banner">
+  <h1 class="home-content">Unleash Your Inner Vogue</h1>
+  <p class="home-content"><%= homeStartingContent %></p>
+</div>
 
-<% articles.forEach(function(article) { %>
-
-    <h1> <%=article.title%></h1>
-    <p> <%=article.body.substring(0,100) %>
-    <a href="/articles/<%=article._id%>">Read more</a>
-    <span id="dots">...</span><span id="more">
-      <%=article.body.substring(101,article.body.length) %>
-    </span>
-    </p>
-
-  <%});%>
+<div id="carousel-home" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+    <% for (let i = 1; i <= Math.ceil(articles.length / 3); i++) { %>
+      <li data-target="#carousel-home" data-slide-to="<%= i %>"></li>
+    <% } %>
+  </ol>
+  <div class="carousel-inner">
+    <% for (let i = 0; i < articles.length; i += 3) { %>
+      <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+        <div class="article-container">
+          <% for (let j = i; j < i + 3 && j < articles.length; j++) { %>
+            <div class="article">
+              <div class="image-gallery">
+                <img src="<%= articles[j].imageUrl %>" alt="Image" />
+              </div>
+              <h5><%= articles[j].category %></h5>
+              <h3><%= articles[j].title %></h3>
+              <p>
+                <% if (articles[j].body) { %>
+                  <%- articles[j].body.substring(0, 100) %>
+                  <a href="/articles/<%= articles[j]._id %>">Read more</a>
+                  <span id="dots">...</span>
+                  <span id="more"><%- articles[j].body.substring(101) %></span>
+                <% } else { %>
+                  <!-- Handle the case where body is undefined or empty -->
+                <% } %>
+              </p>
+              <hr class="dashed" />
+              <h5><%= articles[j].author %></h5>
+              <h6><%= articles[j].date.toLocaleDateString("en-us", {
+                weekday: "long",
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }) %></h6>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <a class="carousel-control-prev" href="#carousel-home" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel-home" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 <%- include("partials/footer") -%>

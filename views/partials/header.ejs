@@ -1,26 +1,144 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <!-- Quill.js stylesheet -->
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
 
-<head>
-  <script type="text/javascript" src="/scripts/functions.js"></script>
-  <meta charset="utf-8">
-  <title>Daily Journal</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <p class="navbar-brand">DAILY JOURNAL</p>
-      </div>
-        <ul class="nav navbar-nav navbar-right">
-          <!-- 6 -->
-          <li id="home"><a href="/">HOME</a></li>
-          <li id="about"><a href="/about">ABOUT US</a></li>
-          <li id="contact"><a href="/contact">CONTACT US</a></li>
-        </ul>
-    </div>
-  </nav>
+    <!-- Font preconnects and styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Page title -->
+    <title>ECLAT.</title>
+
+    <!-- Favicon -->
+    <link
+      sizes="16x16"
+      rel="icon"
+      href="https://img.icons8.com/ios-filled/50/women-shoe-side-view.png"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- jQuery, Popper.js, and Bootstrap JS scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom functions script -->
+    <script type="text/javascript" src="/scripts/functions.js"></script>
+
+    <!-- Quill.js script -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
 
   <body>
-    <div class="container">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- Logo image -->
+          <img
+            id="logo"
+            src="/css/images/logo.png"
+            alt="Marianna Tsapali Beauty Blog"
+          />
+        </a>
+        <!-- Navbar toggler for mobile -->
+        <button
+          style="margin: 10%"
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <img
+            class="navbar-toggler-icon"
+            src="/css/images/menu-icon.png"
+            alt="menu-icon"
+          />
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/articles">ALL ARTICLES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/compose">PUBLISH NEW ARTICLE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">CONTACT US</a>
+            </li>
+            <li class="nav-item">
+              <!-- Search form -->
+              <form action="/search-results" method="get">
+                <button
+                  type="submit"
+                  style="
+                    background-color: transparent !important;
+                    border: none !important;
+                    box-shadow: none !important;
+                  "
+                >
+                  <!-- Search icon -->
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/256/3917/3917132.png"
+                    alt="Search Icon"
+                    style="width: 20px; height: 20px"
+                  />
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!-- edit.ejs -->
+<%- include("partials/header") -%>
+<div class="page">
+  <h2>Edit Article</h2>
+  <form action="/articles/<%= article._id %>/edit" name="newForm" method="post">
+    <!--============================Title============================-->
+    <div class="form-group">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="newContentTitle"
+            class="form-control"
+            value="<%=article.title%>"
+            required
+          />
+          <div id="titleCheckIcon" class="check-icon"></div>
+        </div>
+        <div id="titleErrorMessage" class="minCharsError"></div>
+      </div>
+      <!--============================Author============================-->
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">Author</label>
+          <div class="input-container">
+            <input
+              type="text"
+              name="newContentAuthor"
+              class="form-control"
+              value="<%=article.author%>"
+              required
+            />
+            <div id="authorCheckIcon" class="check-icon"></div>
+          </div>
+        </div>
+        <div id="authorErrorMessage" class="minCharsError"></div>
+      </div>
+      <!--============================Category============================-->
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="newContentCategory"
+            class="form-control"
+            value="<%=article.category%>"
+            required
+          />
+          <div id="categoryCheckIcon" class="check-icon"></div>
+        </div>
+        <div id="categoryErrorMessage" class="minCharsError"></div>
+      </div>
+      <!--============================Date============================-->
+      <div class="mb-3">
+        <label class="form-label">Date</label>
+        <input
+          type="date"
+          name="newContentDate"
+          class="form-control"
+          value="<%= article.date.toISOString().split('T')[0] %>"
+          required
+        />
+      </div>
+      <!--============================Post============================-->
+      <div class="mb-3">
+        <label class="form-label">Post</label>
+        <div class="input-container">
+          <div id="quill-editor" name="newContentBody"><%- article.body %></div>
+          <input
+            type="hidden"
+            name="newContentBody"
+            id="newContentBody"
+            value="<%- article.body %>"
+            required
+          />
+        </div>
+      </div>
+
+      <!--============================Image URL============================-->
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <div class="input-container">
+          <input
+            type="text"
+            name="newContentImageUrl"
+            class="form-control"
+            placeholder="Enter image URL"
+            value="<%=article.imageUrl%>"
+            required
+          />
+          <div id="imageUrlCheckIcon" class="check-icon"></div>
+        </div>
+        <div id="imageUrlErrorMessage"></div>
+      </div>
+      <!--============================Accept Terms============================-->
+      <div class="mb-3">
+        <label class="form-check">
+          <input
+            type="checkbox"
+            name="acceptTerms"
+            class="form-check-input"
+            required
+          />
+          &nbsp; &nbsp; &nbsp;I accept the terms and conditions
+        </label>
+      </div>
+      <button id="edit-button" name="newContentButton" type="submit">Save Changes</button>
+      <div id="formErrorMessage" style="margin-top: 1px"></div>
+    </div>
+  </form>
+</div>
+
+<script src="/scripts/checks.js"></script>
+<%- include("partials/footer") -%>

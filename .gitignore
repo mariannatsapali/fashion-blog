@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Dependency directories
+# This is the directory where npm installs dependencies
+# (Do not remove it from .gitignore if you're using npm for package management)
+lib/
+
+# .env file (contains sensitive information, should not be version controlled)
+.env
+
+# Log files and test databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+
+# npm debug log
+npm-debug.log
+
+# Environment-specific configuration files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Jest coverage directory
+coverage/
+
+# Compiled binary addons (like node-sass)
+build/Release/
+
+# Cache directories
+.cache/
+dist/

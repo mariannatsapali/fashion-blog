@@ -1,6 +1,21 @@
 <%- include("partials/header") -%>
-
-<h1><%=articleTitle%></h1>
-<p> <%=articleBody%> </p>
-
+<div class="page">
+  <hr />
+  <div class="container">
+    <div class="row">
+      <div class="post-image col">
+        <img src="<%= articleImageUrl %>" alt="image" />
+      </div>
+      <div class="post-details col">
+        <h1><%= articleTitle %></h1>
+        <h5><%= articleCategory %></h5>
+        <h6><%= articleAuthor %></h6>
+        <h6><%= articleDate %></h6>
+      </div>
+    </div>
+    <div class="post-body row">
+      <p><%- articleBody %></p>
+    </div>
+  </div>
+</div>
 <%- include("partials/footer") -%>

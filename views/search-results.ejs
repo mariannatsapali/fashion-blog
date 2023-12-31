@@ -1,0 +1,52 @@
+<%- include("partials/header") -%>
+
+<div class=" page container">
+    <form action="/search-results" method="get">
+        <label for="searchInput">Search Articles:</label>
+        <input class="form-control" type="text" id="searchInput" name="query" placeholder="Enter article name" required>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <br><br>
+
+    <!-- Display search results here -->
+    <% if (searchResults && searchResults.length > 0) { %>
+            <% for (let i = 0; i < searchResults.length; i+=3) { %>
+                <div class="article-container">
+                    <% for (let j = i; j < i+3 && j < searchResults.length; j++) { %>
+                        <div class="article">
+                            
+                            <div class="image-gallery">
+                                <img src="<%= searchResults[j].imageUrl %>" alt="Image" />
+                            </div>
+                            <h2><%= searchResults[j].title %></h2>
+                            <p><%= searchResults[j].content %></p>
+                            <p>
+                                <% if (searchResults[j].body) { %>
+                                    <%- searchResults[j].body.substring(0, 100) %>
+                                    <a href="/articles/<%= searchResults[j]._id %>">Read more</a>
+                                    <span id="dots">...</span>
+                                    <span id="more"><%- searchResults[j].body.substring(101) %></span>
+                                <% } else { %>
+                                    No content available.
+                                <% } %>
+                            </p>
+                            <hr class="dashed" />
+                            <h5><%= searchResults[j].author %></h5>
+                            <h6><%= searchResults[j].date.toLocaleDateString("en-us", {
+                                weekday: "long",
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric",
+                              }) %></h6>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
+        <p>No results found.</p>
+    <% } %>
+</div>
+
+<%- include("partials/footer") -%>
