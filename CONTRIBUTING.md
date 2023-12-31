@@ -1,4 +1,3 @@
-```markdown
 # Contributing to Fashion Blog Project
 
 Thank you for considering contributing to the Fashion Blog project! By contributing, you help make this project better and support the fashion community.
