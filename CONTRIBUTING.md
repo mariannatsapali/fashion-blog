@@ -65,4 +65,3 @@ When submitting a pull request:
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project, you agree to abide by its terms. Please review [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details.
 
 Thank you for your contribution!
-```
