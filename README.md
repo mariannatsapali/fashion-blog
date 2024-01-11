@@ -36,7 +36,7 @@ To run the project locally, follow these steps:
 3. Set up MongoDB:
 
    - Create a MongoDB database.
-   - Update the database connection string in `app.js` with your MongoDB credentials.
+   - Update the database connection string in `app.js` (replace [MONGODBURL] with your MongoDB credentials).
 
 4. Run the application:
 
