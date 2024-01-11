@@ -17,34 +17,74 @@ Welcome to the Fashion Blog project! This web application serves as a platform f
 - **EJS:** Embedded JavaScript templates for rendering dynamic content.
 - **Quill Editor:** Rich text editor for creating and editing article content.
 
-## Getting Started
+### Getting Started
 
-To run the project locally, follow these steps:
-
-1. Clone the repository:
-
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/mariannatsapali/fashion-blog.git
+   cd fashion-blog
    ```
 
-2. Install dependencies:
-
+2. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-3. Set up MongoDB:
-
-   - Create a MongoDB database.
-   - Update the database connection string in `app.js` (replace [MONGODBURL] with your MongoDB credentials).
-
-4. Run the application:
-
-   ```bash
-   npm start
+3. **Environment Variables:**
+   Create a `.env` file in the root directory and add the following:
+   ```env
+   MONGODB_URI= [TYPE YOUR MONGODB URI]
    ```
 
-5. Open your browser and navigate to `http://localhost:3000` to explore the Fashion Blog.
+### MongoDB Database
+
+- Ensure that your MongoDB server is running before starting the application.
+- The MongoDB connection URI can be configured in the `.env` file.
+- Check the documentation for more: https://www.mongodb.com/docs/drivers/node/current/quick-start/
+
+### Running the Application
+
+- **Production Mode:**
+  ```bash
+  npm start
+  ```
+  This command starts the server using Node.js.
+
+- **Development Mode:**
+  ```bash
+  npm run dev
+  ```
+  This command starts the server with Nodemon for automatic restarts on code changes.
+
+  5. Open your browser and navigate to `http://localhost:3000` to explore the Fashion Blog.
+
+### Project Structure
+
+- **`app.js`**: Entry point of the application.
+- **`public/`**: Static assets (stylesheets, images, etc.).
+- **`views/`**: EJS templates for rendering HTML pages.
+
+### Routes
+
+- **Home Page:** `/`
+- **Articles List Page:** `/articles`
+- **Contact Page:** `/contact`
+- **Search Results Page:** `/search-results`
+- **About Page:** `/about`
+- **Compose Page:** `/compose`
+- **Article Details Page:** `/articles/:articleId`
+- **Edit Article Page:** `/articles/:articleId/edit`
+
+### Adding, Editing, and Deleting Articles
+
+- To add a new article, navigate to the `/compose` page and fill out the required fields.
+- To edit an existing article, visit the specific article's page and click on the "Edit" button.
+- To delete an article, go to the specific article's page and click on the "Delete" button.
+
+### Important Notes
+
+- This application is for educational purposes and may lack advanced features for production.
+- Double-check the MongoDB URI and make sure the MongoDB server is running.
 
 ## Contributing
 
