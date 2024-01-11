@@ -10,7 +10,7 @@ var _ = require("lodash");
 const mongoose = require("mongoose");
 
 //Connect to mongoDB database
-mongoose.connect(process.env.MONGODB_URI || [MONGODBURL] );
+mongoose.connect(process.env.MONGODB_URI);
 
 
 //Article Schema for database
