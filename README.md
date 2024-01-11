@@ -56,7 +56,7 @@ Welcome to the Fashion Blog project! This web application serves as a platform f
   ```
   This command starts the server with Nodemon for automatic restarts on code changes.
 
-  5. Open your browser and navigate to `http://localhost:3000` to explore the Fashion Blog.
+5. Open your browser and navigate to `http://localhost:3000` to explore the Fashion Blog.
 
 ### Project Structure
 
